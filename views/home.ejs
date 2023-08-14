@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <title>Document</title>
+    <style>
+      .open {
+        overflow: hidden;
+      }
+
+      .close {
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="modal">
+      <section class="first-section">
+        <div class="content">
+          <div class="container">
+            <div class="row align-item-centerr">
+              <div class="home-content">
+                <h1>Nita & Fahrul</h1>
+                <p>Kepada bapak/ibu/saudara</p>
+                <h5><%= name %></h5>
+                <button id="openButton">Buka Undangan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- home section-->
+    <section class="home-section">
+      <div
+        class="slide active"
+        style="background-image: url('assets/MFTN1604.jpg')"
+      >
+        <div class="container">
+          <div class="row align-item-center">
+            <div class="home-content">
+              <p>We are Getting Married</p>
+              <h1>Nita & Fahrul</h1>
+              <span>10 sept 2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide" style="background-image: url('assets/MFTN1974.jpg')">
+        <div class="container">
+          <div class="row align-item-center">
+            <div class="home-content">
+              <p>We are Getting Married</p>
+              <h1>Nita & Fahrul</h1>
+              <span>10 sept 2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide" style="background-image: url('assets/1W5A6512.JPG')">
+        <div class="container">
+          <div class="row align-item-center">
+            <div class="home-content">
+              <p>We are Getting Married</p>
+              <h1>Nita & Fahrul</h1>
+              <span>10 sept 2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="countdown">
+      <div class="countdown">
+        <div class="countdown-item">
+          <h2
+            id="days"
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            data-aos-mirror="true"
+          >
+            00
+          </h2>
+          <small
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1200"
+            data-aos-once="false"
+            data-aos-mirror="true"
+            >Hari</small
+          >
+        </div>
+        <div class="countdown-item">
+          <h2
+            id="hours"
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            data-aos-mirror="true"
+          >
+            00
+          </h2>
+          <small
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1200"
+            data-aos-once="false"
+            data-aos-mirror="true"
+            >jam</small
+          >
+        </div>
+        <div class="countdown-item">
+          <h2
+            id="minutes"
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            data-aos-mirror="true"
+          >
+            00
+          </h2>
+          <small
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1200"
+            data-aos-once="false"
+            data-aos-mirror="true"
+            >menit</small
+          >
+        </div>
+        <div class="countdown-item">
+          <h2
+            id="seconds"
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            data-aos-mirror="true"
+          >
+            00
+          </h2>
+          <small
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1200"
+            data-aos-once="false"
+            data-aos-mirror="true"
+            >detik</small
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="salam">
+      <div class="salam-content">
+        <h4
+          data-aos="zoom-in"
+          data-aos-easing="ease-in-out"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-once="false"
+          data-aos-mirror="true"
+        >
+          Assalamu'alaikum wr wb Segala Puji Bagi Allah SWT yang telah
+          menjadikan hambanya hidup berpasang-pasangan. Dengan memohon Ridho,
+          Rahmat, dan Berkah Allah SWT, kami bermaksud untuk mengundang
+          Saudara/i dalam acara pernikahan yang kami selenggarakan.
+        </h4>
+      </div>
+    </section>
+
+    <section class="couple-section">
+      <div class="container">
+        <div class="row">
+          <div class="section-title position-relative text-center">
+            <h1
+              data-aos="zoom-in"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-once="false"
+              data-aos-mirror="true"
+              class="font-secondary display-4"
+            >
+              Happy Couple
+            </h1>
+            <i class="far fa-heart text-dark"></i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="couple">
+            <img
+              data-aos="zoom-in"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-once="false"
+              data-aos-mirror="true"
+              src="assets/MFTN2017.jpg"
+              alt="Happy couple"
+            />
+            <h3
+              data-aos="zoom-in"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-once="false"
+              data-aos-mirror="true"
+            >
+              Nita Utami, S.Si
+            </h3>
+            <p
+              data-aos="zoom-in"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-once="false"
+              data-aos-mirror="true"
+            >
+              Putri Pertama bapak Sugimin dan ibu Sartinah Dayu RT 1,
+              Gadingsari, Sanden, Bantul, Yogyakarta
+            </p>
+          </div>
+          <div class="couple">
+            <img
+              data-aos="zoom-in"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-once="false"
+              data-aos-mirror="true"
+              src="assets/MFTN2023.jpg"
+              alt="Happy couple"
+            />
+            <h3
+              data-aos="zoom-in"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-once="false"
+              data-aos-mirror="true"
+            >
+              Fahrul Sobari S.T
+            </h3>
+            <p
+              data-aos="zoom-in"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-once="false"
+              data-aos-mirror="true"
+            >
+              Putra Pertama Bapak Sobari dan Ibu Dahminiyati Jalan AMD Babakan
+              RT002/01, Bakti Jaya, Setu, Tangerang Selatan
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fluid py-5" id="event">
+      <div class="container py-5">
+        <div class="section-title position-relative text-center">
+          <h1 class="font-secondary display-4">Our Wedding Event</h1>
+          <i class="far fa-heart text-dark"></i>
+        </div>
+        <div class="rowku justify-content-center">
+          <div class="text-center">
+            <h5 class="font-weight-normal text-muted mb-3 pb-3">
+              Kami dengan senang hati mengundang Anda untuk bergabung dengan
+              kami dalam merayakan cinta dan kebahagiaan kami pada hari
+              pernikahan kami. Kami ingin berbagi momen spesial ini dengan
+              keluarga dan teman-teman terdekat kami
+            </h5>
+          </div>
+        </div>
+        <div class="event-cards">
+          <div class="event-card">
+            <div class="slider-container">
+              <div class="slider">
+                <img class="slides" src="assets/1W5A6485.JPG" alt="Slide 1" />
+                <img class="slides" src="assets/1W5A6473.JPG" alt="Slide 2" />
+                <img class="slides" src="assets/1W5A6493.JPG" alt="Slide 3" />
+              </div>
+            </div>
+            <div class="event-info">
+              <h4 class="event-title">Akad Nikah</h4>
+              <p class="event-location">
+                Dayu, RT01, Gadingsari, Sanden, Bantul, Yogyakarta
+              </p>
+              <p class="event-time">Minggu, 10 September 2023</p>
+              <p class="event-time">9:00 AM - selesai</p>
+              <a class="map-button" href="https://goo.gl/maps/vwSNbW3om4FtF7599"
+                >Buka Maps</a
+              >
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="slider-container">
+              <div class="slidera">
+                <img class="slidesr" src="assets/1W5A6497.JPG" alt="Slide 1" />
+                <img class="slidesr" src="assets/1W5A6507.JPG" alt="Slide 2" />
+                <img class="slidesr" src="assets/1W5A6512.JPG" alt="Slide 3" />
+              </div>
+            </div>
+            <div class="event-info">
+              <h4 class="event-title">Resepsi</h4>
+              <p class="event-location">
+                Dayu, RT01, Gadingsari, Sanden, Bantul, Yogyakarta
+              </p>
+              <p class="event-time">Minggu, 10 September 2023</p>
+              <p class="event-time">11:00 AM - 13:00 PM</p>
+              <a class="map-button" href="https://goo.gl/maps/vwSNbW3om4FtF7599"
+                >Buka Maps</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="commentar">
+      <div class="comment-form">
+        <h2>Beri Ucapan</h2>
+        <ul id="list"></ul>
+
+        <form method="POST" action="/comments" id="comment-form">
+          <label for="nama">Nama:</label>
+          <input type="text" id="nama" name="nama" required />
+
+          <label for="ucapan">Ucapan:</label>
+          <textarea id="ucapan" name="ucapan" required></textarea>
+
+          <button type="submit">Kirim Ucapan</button>
+        </form>
+      </div>
+
+      <div class="comment-list">
+        <ul id="comment-ul"></ul>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="section-title">
+        <h2>Our Gallery</h2>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            src="assets/1W5A6473.JPG"
+          />
+          <img
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            src="assets/1W5A6475.JPG"
+          />
+          <img
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            src="assets/1W5A6483.JPG"
+          />
+          <img
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            src="assets/1W5A6485.JPG"
+          />
+        </div>
+
+        <div class="column">
+          <img
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            src="assets/1W5A6526.JPG"
+          />
+          <img
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            src="assets/1W5A6529.JPG"
+          />
+          <img
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            src="assets/1W5A6546.JPG"
+          />
+          <img
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            src="assets/MFTN1604.jpg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <audio id="song" preload="auto">
+      <source src="/assets/Westlife Beautiful In White.mp3" type="audio/mp3" />
+    </audio>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/sliders.js"></script>
+    <script src="/js/day.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        document.body.className = "open";
+      });
+
+      const modal = document.getElementById("modal");
+      const openButton = document.getElementById("openButton");
+
+      // Event listener for the "open" button
+      openButton.addEventListener("click", () => {
+        modal.style.display = "none";
+        document.body.className = "close";
+        Play();
+      });
+
+      // music script
+      var musrik = document.getElementById("song");
+      var player,
+        playing = false;
+
+      function Play() {
+        if (musrik.paused && !playing) {
+          musrik.play();
+        } else if (playing) {
+          musrik.pause();
+        }
+      }
+
+      musrik.addEventListener("play", function () {
+        playing = true;
+      });
+
+      musrik.addEventListener("pause", function () {
+        playing = false;
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("#comment-form").on("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          // Gather form data
+          const formData = {
+            nama: $("#nama").val(),
+            ucapan: $("#ucapan").val(),
+          };
+
+          // Send the form data to the server
+          $.post("/comments", formData, function (response) {
+            // Handle the server response, e.g., show a success message
+            console.log(response);
+
+            // Clear the form after submission
+            $("#nama").val("");
+            $("#ucapan").val("");
+
+            fetchList();
+          });
+        });
+
+        // Function to fetch and display the list
+        function fetchList() {
+          $.get("/comments", function (data) {
+            $("#list").empty(); // Clear the list
+
+            console.log(data);
+            data.forEach(function (item) {
+              $("#list").append($("<li>").text(JSON.stringify(item)));
+            });
+          });
+        }
+
+        // Initial fetch
+        fetchList();
+      });
+    </script>
+  </body>
+</html>
