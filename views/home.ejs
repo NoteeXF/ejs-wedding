@@ -354,7 +354,7 @@
         <h2>Beri Ucapan</h2>
         <ul id="list"></ul>
 
-        <form method="POST" action="/comments" id="comment-form">
+        <form method="POST" action="/" id="comment-form">
           <label for="nama">Nama:</label>
           <input type="text" id="nama" name="nama" required />
 
@@ -366,7 +366,9 @@
       </div>
 
       <div class="comment-list">
-        <ul id="comment-ul"></ul>
+        <ul>
+          
+      </ul>
       </div>
     </section>
 
@@ -503,47 +505,6 @@
 
       musrik.addEventListener("pause", function () {
         playing = false;
-      });
-    </script>
-
-    <script>
-      $(document).ready(function () {
-        $("#comment-form").on("submit", function (event) {
-          event.preventDefault(); // Prevent default form submission
-
-          // Gather form data
-          const formData = {
-            nama: $("#nama").val(),
-            ucapan: $("#ucapan").val(),
-          };
-
-          // Send the form data to the server
-          $.post("/comments", formData, function (response) {
-            // Handle the server response, e.g., show a success message
-            console.log(response);
-
-            // Clear the form after submission
-            $("#nama").val("");
-            $("#ucapan").val("");
-
-            fetchList();
-          });
-        });
-
-        // Function to fetch and display the list
-        function fetchList() {
-          $.get("/comments", function (data) {
-            $("#list").empty(); // Clear the list
-
-            console.log(data);
-            data.forEach(function (item) {
-              $("#list").append($("<li>").text(JSON.stringify(item)));
-            });
-          });
-        }
-
-        // Initial fetch
-        fetchList();
       });
     </script>
   </body>

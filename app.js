@@ -1,8 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const listController = require("./controllers/list");
-const cookieParser = require("cookie-parser"); // Perlu instalasi: npm install cookie-parser
-const session = require("express-session");
+const guest = require("./model/guestModel");
+const {Greet} = require("./model/commentModel")
+
 
 const app = express();
 const port = 3000;
@@ -11,78 +12,53 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const comments = [];
 
-const checkLoginMiddleware = (req, res, next) => {
-  if (req.session.login) {
-    next();
-  } else {
-    res.redirect("/");
+app.get('/', async (req, res) => {
+  try {
+    const nameParam = req.query.name;
+    
+    if (nameParam) {
+      const item = await guest.Guest.findOne({
+        where: {
+          name: nameParam
+        }
+      });
+
+      if (item) {
+        res.render('home', { name: nameParam }); // Render halaman home dan kirim parameter name ke EJS
+      } else {
+        res.send('Name not found'); // Jika nama tidak ditemukan, kirim pesan
+      }
+    } else {
+      res.send('Please provide a name parameter'); // Jika tidak ada parameter 'name', kirim pesan
+    }
+  } catch (err) {
+    console.error('Error fetching item', err);
+    res.send('An error occurred');
   }
-};
+});
 
-app.use(cookieParser());
-app.use(
-  session({
-    secret: "secret",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
-
-app.get("/", (req, res) => {
-  let name = req.query.name;
-  // check user ada di list atau tidak
-
-  const checkUser = listController.checkUserByName(name);
-
-  if (checkUser) {
-    res.redirect("/blank");
-    return;
+app.get('/', async (req, res) => {
+  try {
+      const comments = await Greet.findAll();
+      res.render('home', { comments });
+  } catch (error) {
+      console.error("Terjadi kesalahan:", error);
+      res.status(500).send("Terjadi kesalahan");
   }
-  return res.render("home", { name });
 });
 
-app.get("/login", (req, res) => {
-  return res.render("login");
-});
-
-app.post("/login", (req, res) => {
-  const { password } = req.body;
-  if (password !== "password") {
-    return res.redirect("/");
+app.post('/', async (req, res) => {
+  try {
+      const { nama, ucapan } = req.body;
+      await Greet.create({ nama, ucapan });
+      res.redirect('/');
+  } catch (error) {
+      console.error("Terjadi kesalahan:", error);
+      res.status(500).send("Terjadi kesalahan");
   }
-  // set login to cookie /session
-  req.session.login = true;
-
-  res.redirect("/lists");
 });
 
-// Create a new item in the list
-app.post("/comments", (req, res) => {
-  const data = req.body;
-
-  comments.push(data);
-
-  return res.status(200).send("Ucapan berhasil diterima!");
-});
-
-app.get("/comments", (req, res) => {
-  res.json(comments);
-});
-
-// Create a new item in the list
-app.post("/lists", checkLoginMiddleware, listController.createListItem);
-
-// Read the entire list
-app.get("/lists", checkLoginMiddleware, listController.getListItems);
-
-// Delete a specific item from the list
-app.post("/lists/:id", checkLoginMiddleware, listController.deleteListItem);
-
-app.get("/blank", (req, res) => {
-  return res.render("tidak-diundang");
-});
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
