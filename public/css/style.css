@@ -22,15 +22,32 @@ body{
   box-sizing: border-box;
 }
 
-.content .home-content button{
-    text-decoration: none;
-    border: 1px solid #f5bcbc;
-    background: #f5bcbc;
-    padding: 10px;
-    color: white;
-    border-radius: 5px;
-  
+#openButton {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
+
+#openButton:hover {
+  background-color: #ff514f;
+  transform: translateY(-2px);
+}
+
+.button-icon {
+  margin-right: 10px;
+}
+
+.button-icon i {
+  font-size: 18px;
+}
+
 
 :before,:after{
   box-sizing: border-box;
@@ -477,12 +494,16 @@ background: #E47A2E;
   justify-content: center;
   align-items: stretch;
   padding: 20px;
-  background-color: #f5f5f5;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   margin: auto;
+  border: 1px solid #ff6b6b; /* Warna border */
+  background-color: #fdebeb; /* Warna latar belakang */
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Efek bayangan */
 }
+
 
 .comment-form {
   flex: 1;
@@ -499,7 +520,9 @@ background: #E47A2E;
   margin-bottom: 15px;
   text-align: center;
 }
-
+.comment-form h2{
+  font-family: 'EB Garamond', serif;
+}
 .comment-form label {
   font-weight: bold;
   margin-bottom: 5px;
@@ -537,33 +560,104 @@ background: #E47A2E;
 }
 
 /* Gaya untuk daftar komentar */
+/* Gaya Komentar List */
+/* Gaya Komentar List */
 .comment-list ul {
   list-style-type: none;
   padding: 0;
 }
 
 .comment-list li {
-  background-color: #fff;
-  border: 1px solid #e5e5e5;
+  background-color: #fff6f6;
+  border: 1px solid #ff6b6b;
   border-radius: 10px;
   margin-bottom: 15px;
   padding: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+}
+
+.comment-list li:hover {
+  transform: translate(0, -5px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .comment-list li h3 {
   font-size: 18px;
   margin-bottom: 5px;
+  color: #ff6b6b;
 }
 
 .comment-list li p {
   font-size: 16px;
   margin-bottom: 0;
+  color: #333;
+}
+
+/* Gaya Komentar */
+.commentContainer {
+  max-height: 300px;
+  overflow: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.commentContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.commentContainer::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 4px;
+}
+
+.commentContainer::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+
+.comment-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ff6b6b;
+  background-color: #fff6f6;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+}
+
+.comment-item:hover {
+  transform: translate(0, -5px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comment-text {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.comment-date {
+  font-size: 12px;
+  color: #777;
 }
 
 
 
+
 /* our gallery */
+
 
 .gallery{
   padding: 80px 0px 80px;

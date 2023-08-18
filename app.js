@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const listController = require("./controllers/list");
 const guest = require("./model/guestModel");
 const {Greet} = require("./model/commentModel")
 
@@ -11,6 +10,7 @@ const port = 3000;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: false }));
+
 
 
 app.get('/', async (req, res) => {
@@ -38,26 +38,31 @@ app.get('/', async (req, res) => {
   }
 });
 
-app.get('/', async (req, res) => {
+app.get('/gret', async (req, res) => {
   try {
-      const comments = await Greet.findAll();
-      res.render('home', { comments });
+    const comments = await Greet.findAll();
+    res.json(comments);
   } catch (error) {
-      console.error("Terjadi kesalahan:", error);
-      res.status(500).send("Terjadi kesalahan");
+    console.error("Terjadi kesalahan:", error);
+    res.status(500).send("Terjadi kesalahan");
   }
 });
 
-app.post('/', async (req, res) => {
+
+app.post('/submit/:id', async (req, res) => {
   try {
-      const { nama, ucapan } = req.body;
-      await Greet.create({ nama, ucapan });
-      res.redirect('/');
+    const { nama, ucapan } = req.body;
+    await Greet.create({ nama, ucapan });
+
+    res.status(200).send('Ucapan Anda telah berhasil dikirim. Terima kasih!');
   } catch (error) {
-      console.error("Terjadi kesalahan:", error);
-      res.status(500).send("Terjadi kesalahan");
+    console.error("Terjadi kesalahan:", error);
+    res.status(500).send("Terjadi kesalahan");
   }
 });
+
+
+
 
 
 app.listen(port, () => {

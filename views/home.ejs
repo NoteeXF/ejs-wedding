@@ -34,11 +34,20 @@
         <div class="content">
           <div class="container">
             <div class="row align-item-centerr">
-              <div class="home-content">
+              <div class="home-content" data-aos="zoom-in-down"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="850"
+              data-aos-duration="1600"
+              >
                 <h1>Nita & Fahrul</h1>
                 <p>Kepada bapak/ibu/saudara</p>
                 <h5><%= name %></h5>
-                <button id="openButton">Buka Undangan</button>
+                <button id="openButton">
+                  <span class="button-icon">
+                    <i aria-hidden="true" class="far fa-envelope"></i>
+                  </span>
+                  Buka Undangan
+                </button>
               </div>
             </div>
           </div>
@@ -62,7 +71,7 @@
         </div>
       </div>
 
-      <div class="slide" style="background-image: url('assets/MFTN1974.jpg')">
+      <div class="slide" style="background-image: url('assets/20230117_222549.jpg')">
         <div class="container">
           <div class="row align-item-center">
             <div class="home-content">
@@ -213,7 +222,6 @@
             >
               Happy Couple
             </h1>
-            <i class="far fa-heart text-dark"></i>
           </div>
         </div>
         <div class="row">
@@ -290,12 +298,26 @@
     <section class="container-fluid py-5" id="event">
       <div class="container py-5">
         <div class="section-title position-relative text-center">
-          <h1 class="font-secondary display-4">Our Wedding Event</h1>
+          <h1 class="font-secondary display-4" 
+          data-aos="zoom-in"
+          data-aos-easing="ease-in-out"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-once="false"
+          data-aos-mirror="true">
+          Our Wedding Event
+        </h1>
           <i class="far fa-heart text-dark"></i>
         </div>
         <div class="rowku justify-content-center">
           <div class="text-center">
-            <h5 class="font-weight-normal text-muted mb-3 pb-3">
+            <h5 class="font-weight-normal text-muted mb-3 pb-3" 
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            data-aos-mirror="true">
               Kami dengan senang hati mengundang Anda untuk bergabung dengan
               kami dalam merayakan cinta dan kebahagiaan kami pada hari
               pernikahan kami. Kami ingin berbagi momen spesial ini dengan
@@ -304,15 +326,26 @@
           </div>
         </div>
         <div class="event-cards">
-          <div class="event-card">
+          <div class="event-card"  data-aos="fade-down-left"
+          data-aos-easing="ease-in-out"
+          data-aos-delay="450"
+          data-aos-duration="1000"
+          data-aos-once="false"
+          data-aos-mirror="true"
+          >
             <div class="slider-container">
               <div class="slider">
                 <img class="slides" src="assets/1W5A6485.JPG" alt="Slide 1" />
-                <img class="slides" src="assets/1W5A6473.JPG" alt="Slide 2" />
-                <img class="slides" src="assets/1W5A6493.JPG" alt="Slide 3" />
+                <img class="slides" src="assets/20230117_222549.JPG" alt="Slide 2" />
+                <img class="slides" src="assets/MFTN1707.JPG" alt="Slide 3" />
               </div>
             </div>
-            <div class="event-info">
+            <div class="event-info" data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1200"
+            data-aos-once="false"
+            data-aos-mirror="true">
               <h4 class="event-title">Akad Nikah</h4>
               <p class="event-location">
                 Dayu, RT01, Gadingsari, Sanden, Bantul, Yogyakarta
@@ -325,15 +358,25 @@
             </div>
           </div>
 
-          <div class="event-card">
+          <div class="event-card" data-aos="fade-up-right"
+          data-aos-easing="ease-in-out"
+          data-aos-delay="450"
+          data-aos-duration="1000"
+          data-aos-once="false"
+          data-aos-mirror="true">
             <div class="slider-container">
               <div class="slidera">
-                <img class="slidesr" src="assets/1W5A6497.JPG" alt="Slide 1" />
-                <img class="slidesr" src="assets/1W5A6507.JPG" alt="Slide 2" />
+                <img class="slidesr" src="assets/MFTN1974.JPG" alt="Slide 1" />
+                <img class="slidesr" src="assets/20230117_222549.JPG" alt="Slide 2" />
                 <img class="slidesr" src="assets/1W5A6512.JPG" alt="Slide 3" />
               </div>
             </div>
-            <div class="event-info">
+            <div class="event-info" data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1200"
+            data-aos-once="false"
+            data-aos-mirror="true">
               <h4 class="event-title">Resepsi</h4>
               <p class="event-location">
                 Dayu, RT01, Gadingsari, Sanden, Bantul, Yogyakarta
@@ -351,10 +394,20 @@
 
     <section class="commentar">
       <div class="comment-form">
-        <h2>Beri Ucapan</h2>
-        <ul id="list"></ul>
+        <div class="section-title position-relative text-center">
+          <h1 class="font-secondary display-4" 
+          data-aos="zoom-in"
+          data-aos-easing="ease-in-out"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-once="false"
+          data-aos-mirror="true">
+          Beri Ucapan
+          </h1>
+          <i class="far fa-heart text-dark"></i>
+        </div>
 
-        <form method="POST" action="/" id="comment-form">
+        <form method="post" action="/submit/:id" id="greetingForm">
           <label for="nama">Nama:</label>
           <input type="text" id="nama" name="nama" required />
 
@@ -363,18 +416,29 @@
 
           <button type="submit">Kirim Ucapan</button>
         </form>
+
       </div>
 
-      <div class="comment-list">
-        <ul>
-          
-      </ul>
+      <div class="commentContainer">
+        <ul id="list"></ul>
       </div>
+      
+      
     </section>
 
     <section class="gallery">
-      <div class="section-title">
-        <h2>Our Gallery</h2>
+     <div class="contaner">
+      <div class="section-title position-relative text-center">
+        <h1 class="font-secondary display-4" 
+        data-aos="zoom-in"
+        data-aos-easing="ease-in-out"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        data-aos-mirror="true">
+        Our Wedding Event
+      </h1>
+        <i class="far fa-heart text-dark"></i>
       </div>
       <div class="row">
         <div class="column">
@@ -384,42 +448,7 @@
             data-aos-delay="50"
             data-aos-duration="1000"
             data-aos-once="false"
-            src="assets/1W5A6473.JPG"
-          />
-          <img
-            data-aos="zoom-in"
-            data-aos-easing="ease-in-out"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-            data-aos-once="false"
-            src="assets/1W5A6475.JPG"
-          />
-          <img
-            data-aos="zoom-in"
-            data-aos-easing="ease-in-out"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-            data-aos-once="false"
-            src="assets/1W5A6483.JPG"
-          />
-          <img
-            data-aos="zoom-in"
-            data-aos-easing="ease-in-out"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-            data-aos-once="false"
-            src="assets/1W5A6485.JPG"
-          />
-        </div>
-
-        <div class="column">
-          <img
-            data-aos="zoom-in"
-            data-aos-easing="ease-in-out"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-            data-aos-once="false"
-            src="assets/1W5A6526.JPG"
+            src="assets/1W5A6512.JPG"
           />
           <img
             data-aos="zoom-in"
@@ -429,13 +458,17 @@
             data-aos-once="false"
             src="assets/1W5A6529.JPG"
           />
+        </div>
+
+        <div class="column">
+          
           <img
             data-aos="zoom-in"
             data-aos-easing="ease-in-out"
             data-aos-delay="50"
             data-aos-duration="1000"
             data-aos-once="false"
-            src="assets/1W5A6546.JPG"
+            src="assets/MFTN1751.JPG"
           />
           <img
             data-aos="zoom-in"
@@ -443,10 +476,33 @@
             data-aos-delay="50"
             data-aos-duration="1000"
             data-aos-once="false"
-            src="assets/MFTN1604.jpg"
+            src="assets/MFTN2037.jpg"
+          />
+        </div>
+        
+        <div class="column">
+          <img
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            src="assets/DSC05055.JPG"
+          />
+        </div>
+        
+        <div class="column">
+          <img
+            data-aos="zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-once="false"
+            src="assets/20230117_222549.JPG"
           />
         </div>
       </div>
+     </div>
     </section>
 
     <audio id="song" preload="auto">
@@ -506,6 +562,53 @@
       musrik.addEventListener("pause", function () {
         playing = false;
       });
+    </script>
+    <script>
+     $(document).ready(function() {
+  $("#greetingForm").submit(function(event) {
+    event.preventDefault();
+
+    const formData = $(this).serialize();
+    $.post("/submit/:id", formData, function(response) {
+      $("#confirmationMessage").text(response).show();
+      $("#nama").val(""); // Clear the name input
+      $("#ucapan").val(""); // Clear the ucapan textarea
+      
+      // Setelah komentar baru ditambahkan, langsung tampilkan komentar
+      fetchList();
+    });
+  });
+
+  function fetchList() {
+    $.get("/gret", function(data) {
+      $("#list").empty(); // Clear the list
+
+      data.forEach(function(comment) {
+        const listItem = $("<li>").addClass("comment-item");
+        const commentHeader = $("<div>").addClass("comment-header");
+        const commentText = $("<p>").addClass("comment-text").text(comment.ucapan);
+        const commentDate = $("<span>").addClass("comment-date").text(`${formatDate(comment.createdAt)}`);
+
+        commentHeader.append($("<strong>").text(comment.nama));
+        commentHeader.append(commentDate);
+        listItem.append(commentHeader);
+        listItem.append(commentText);
+
+        $("#list").append(listItem);
+      });
+    });
+  }
+
+  function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+    return new Date(dateString).toLocaleDateString('id-ID', options);
+  }
+
+  // Initial fetch
+  fetchList();
+});
+
+  
     </script>
   </body>
 </html>
